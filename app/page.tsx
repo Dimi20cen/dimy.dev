@@ -1,5 +1,15 @@
 const projects = [
   {
+    title: "RentPredictor",
+    summary:
+      "Swiss rental price prediction using XGBoost with reproducible train/evaluate/predict scripts and a Streamlit interface.",
+    result: "MAE 347 CHF · RMSE 748 CHF · R2 0.786",
+    links: [
+      { label: "Demo", href: "/projects/rentpredictor" },
+      { label: "Source", href: "https://github.com/Dimi20cen/RentPredictor" }
+    ]
+  },
+  {
     title: "HQ Tooling Platform",
     summary:
       "Built an internal command-center for tool orchestration and process control.",
@@ -67,6 +77,7 @@ export default function HomePage() {
             <article key={project.title} className="project-card">
               <h3>{project.title}</h3>
               <p>{project.summary}</p>
+              {"result" in project ? <p className="result">{project.result}</p> : null}
               <div className="project-links">
                 {project.links.map((link) => (
                   <a key={link.label} href={link.href}>
