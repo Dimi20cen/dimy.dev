@@ -1,6 +1,20 @@
-# dimy.dev Portfolio Starter
+# dimy.dev
 
-Single-page personal portfolio built with Next.js (App Router), ready for Vercel.
+Minimal personal portfolio built with Next.js (App Router).
+
+## Content model
+
+The homepage intentionally stays simple:
+- Name
+- Photo
+- Summary
+- Links (GitHub, LinkedIn)
+- Projects (stacked vertically)
+
+Core files:
+- `app/page.tsx`: page content and project items
+- `app/globals.css`: styling/theme
+- `public/photo.png`: profile photo
 
 ## Run locally
 
@@ -11,14 +25,22 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-## Customize fast
+## Quality checks
 
-- Update personal copy in `app/page.tsx`.
-- Replace placeholder project links (`href: "#"`) with real URLs.
-- Update contact email and social links.
-- Adjust theme tokens in `app/globals.css`.
+```bash
+npm run lint
+npm run typecheck
+npm run test
+npm run build
+```
 
-## Deploy
+Run the full release gate:
 
-Push this folder to a GitHub repo and import it into Vercel.  
-Set production domain to `dimy.dev` and keep `futuretool.dimy.dev` in its own Vercel project.
+```bash
+npm run gate
+```
+
+## Tests
+
+This repo includes a lightweight smoke test in `tests/smoke.test.mjs` that checks
+the homepage source for required sections and key links.
