@@ -1,5 +1,5 @@
 const streamlitUrl =
-  process.env.NEXT_PUBLIC_RENTPREDICTOR_STREAMLIT_URL || "";
+  process.env.NEXT_PUBLIC_RENTPREDICTOR_STREAMLIT_URL || "https://rent-predictor.dimy.dev/?embed=true";
 
 export default function RentPredictorPage() {
   const hasDemo = streamlitUrl.trim().length > 0;
